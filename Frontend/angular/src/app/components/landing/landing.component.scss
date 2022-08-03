@@ -1,0 +1,92 @@
+//sidebar
+// .dem {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   background: white;
+// }
+
+// .siden {
+//   background-color: #eee;
+//   margin-top: 100px;
+//   width: 200px;
+//   border-radius: 25px 25px 0px 0px;
+// }
+
+// #mid {
+//   text-align: center;
+//   padding-top: 5px;
+// }
+
+// .maincontent {
+//   margin-top: 100px;
+// }
+
+#bottom{
+  margin-top: 500px;
+}
+
+
+.but {
+  width: 100%;
+  background-color: transparent;
+  height: 48px;
+}
+
+
+
+// sidenav2
+.sidenav {
+  margin-top: 5%;
+  border-radius: 10px;
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #F0EBE3;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+.table {
+  width: 100%;
+}
+
+// top
+.card {
+  width: 30%;
+}
+.form {
+  width: 100%;
+}
+
+.whole{
+  margin-top: 20px;
+}
+
+
+.but:focus{background-color:#E4DCCF;}
+
+.fup{
+  width: 20%;
+}
+
+
+

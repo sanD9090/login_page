@@ -1,0 +1,128 @@
+<div class="content">
+
+    <form [formGroup]="myform" (ngSubmit)="submit()" class="form-container" >
+      
+      <mat-icon class="ico">account_circle</mat-icon>
+        <h1 class="login">Sign Up</h1> 
+    
+        <h3>Name</h3>
+        <mat-form-field id="namefield" class="example-full-width" appearance="fill">
+            <mat-label>First name </mat-label>
+            <input matInput formControlName="firstname" [errorStateMatcher]="matcher" [(ngModel)]="fname" />
+            <mat-error
+              *ngIf="
+                myform.controls['firstname'].dirty ||
+                myform.controls['firstname'].touched
+              "
+            >
+              <mat-error *ngIf="myform.controls['firstname'].errors?.['required']"
+                >Name is required</mat-error
+              >
+              <mat-error *ngIf="myform.controls['firstname'].errors?.['minlength']"
+                >Minimum 3 chars</mat-error
+              >
+              <mat-error *ngIf="myform.controls['firstname'].errors?.['maxlength']"
+                >Max 20 chars</mat-error
+              >
+              <mat-error *ngIf="myform.controls['firstname'].errors?.['pattern']"
+                >Input a valid name please</mat-error
+              >
+            </mat-error> </mat-form-field>
+      
+          <mat-form-field class="example-full-width lnam" appearance="fill">
+            <mat-label>Last name </mat-label>
+            <input matInput formControlName="lastname"  [errorStateMatcher]="matcher" [(ngModel)]="lname" />
+            <mat-error
+              *ngIf="
+                myform.controls['lastname'].dirty ||
+                myform.controls['lastname'].touched
+              "
+            >
+              <mat-error *ngIf="myform.controls['lastname'].errors?.['required']"
+                >Lastname is required</mat-error
+              >
+              <mat-error *ngIf="myform.controls['lastname'].errors?.['minlength']"
+                >Minimum 3 chars</mat-error
+              >
+              <mat-error *ngIf="myform.controls['lastname'].errors?.['maxlength']"
+                >Max 20 chars</mat-error
+              >
+              <mat-error *ngIf="myform.controls['lastname'].errors?.['pattern']"
+                >Input a valid last name please</mat-error
+              >
+            </mat-error> </mat-form-field
+          >
+        <br>
+        <span class="email">Email-ID</span> <br>
+        <mat-form-field class="example-full-width ema" appearance="fill">
+          <mat-label>Email</mat-label> 
+          <input matInput formControlName="email" [errorStateMatcher]="matcher" [(ngModel)]="email" />
+          <mat-error
+            *ngIf="
+              myform.controls['email'].dirty ||
+              myform.controls['email'].touched
+            "
+          >
+            <mat-error *ngIf="myform.controls['email'].errors?.['required']"
+              >Email is required</mat-error
+            >
+            <mat-error *ngIf="myform.controls['email'].errors?.['email']"
+              >Please enter valid email</mat-error
+            >
+          </mat-error>
+        </mat-form-field> 
+        
+        
+    
+        <br />
+    
+          <span class="password">Password:</span> <br />
+        <mat-form-field       class="pass"
+        id="password" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="showPassword ? 'text' : 'password'"
+            name="password"
+            formControlName="password"
+            [errorStateMatcher]="matcher"
+            [(ngModel)]="password"
+          />
+          <mat-icon matSuffix (click)="togglePasswordVisibility()">
+            {{ showPassword ? "visibility_off" : "visibility" }}
+          </mat-icon>
+          <mat-error
+            *ngIf="
+              myform.controls['password'].dirty ||
+              myform.controls['password'].touched
+            "
+          >
+            <mat-error *ngIf="myform.controls['password'].errors?.['required']"
+              >password is required</mat-error
+            >
+            <mat-error *ngIf="myform.controls['password'].errors?.['minlength']"
+              >Minimum 5 chars</mat-error
+            ></mat-error
+          >
+        </mat-form-field>
+    
+       
+       <br>
+        <button mat-raised-button color="accent" [disabled]="myform.invalid" class="submit" (click)="openSnackBar()" type="submit">
+        Sign Up
+        </button> <br>
+    
+        
+       
+    
+    
+     
+        
+    </form>
+    
+    </div>
+    
+    
+    <!-- <router-outlet></router-outlet> -->
+    
+    

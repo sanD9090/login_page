@@ -1,0 +1,82 @@
+<h2>Edit User</h2>
+<!-- <h2>the id is {{data.rowid}}</h2> -->
+<div class="content">
+    <form [formGroup]="myform2" (ngSubmit)="submit()" class="form-container" >        Name <br />
+        <mat-form-field id="namefield" class="example-full-width" appearance="fill">
+          <mat-label>First name </mat-label>
+          <input matInput formControlName="firstname" [errorStateMatcher]="matcher" [(ngModel)]="fname" />
+          <mat-error
+            *ngIf="
+              myform2.controls['firstname'].dirty ||
+              myform2.controls['firstname'].touched
+            "
+          >
+            <mat-error *ngIf="myform2.controls['firstname'].errors?.['required']"
+              >Name is required</mat-error
+            >
+            <mat-error *ngIf="myform2.controls['firstname'].errors?.['minlength']"
+              >Minimum 3 chars</mat-error
+            >
+            <mat-error *ngIf="myform2.controls['firstname'].errors?.['maxlength']"
+              >Max 20 chars</mat-error
+            >
+            <mat-error *ngIf="myform2.controls['firstname'].errors?.['pattern']"
+              >Input a valid name please</mat-error
+            >
+          </mat-error> </mat-form-field
+        >&nbsp;
+    
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Last name </mat-label>
+          <input matInput formControlName="lastname"  [errorStateMatcher]="matcher" [(ngModel)]="lname" />
+          <mat-error
+            *ngIf="
+              myform2.controls['lastname'].dirty ||
+              myform2.controls['lastname'].touched
+            "
+          >
+            <mat-error *ngIf="myform2.controls['lastname'].errors?.['required']"
+              >Lastname is required</mat-error
+            >
+            <mat-error *ngIf="myform2.controls['lastname'].errors?.['minlength']"
+              >Minimum 3 chars</mat-error
+            >
+            <mat-error *ngIf="myform2.controls['lastname'].errors?.['maxlength']"
+              >Max 20 chars</mat-error
+            >
+            <mat-error *ngIf="myform2.controls['lastname'].errors?.['pattern']"
+              >Input a valid last name please</mat-error
+            >
+          </mat-error> </mat-form-field
+        ><br />
+    
+        <br />
+        
+        &nbsp;
+    
+       
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" [errorStateMatcher]="matcher" [(ngModel)]="email" />
+          <mat-error
+            *ngIf="
+              myform2.controls['email'].dirty ||
+              myform2.controls['email'].touched
+            "
+          >
+            <mat-error *ngIf="myform2.controls['email'].errors?.['required']"
+              >Email is required</mat-error
+            >
+            <mat-error *ngIf="myform2.controls['email'].errors?.['email']"
+              >Please enter valid email</mat-error
+            >
+          </mat-error>
+        </mat-form-field> 
+        <br>
+        <button mat-raised-button color="accent"   type="submit">
+          &nbsp; Sign Up
+        </button>
+        
+    </form>
+    
+    </div>

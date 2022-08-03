@@ -1,0 +1,104 @@
+<!-- sidebar -->
+<!-- <div class="sidebar">
+  <mat-sidenav-container class=" dem">
+    <mat-sidenav mode="side" opened class="siden"
+      ><h1 id="mid">Buttons</h1>
+      <button mat-flat-button class="but" [routerLink]="['login']">
+        <mat-icon>account_circle</mat-icon>Log In
+      </button>
+      <button mat-flat-button class="but"  ><mat-icon>person</mat-icon>Sign up</button>
+      <button mat-flat-button class="but"   ><mat-icon>people</mat-icon>View Users</button>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div> -->
+
+<!-- sidebar2 -->
+<div class="whole">
+  <form class="upload">
+    <div class="mb-1 fup">
+      <label for="formFile" class="form-label"><h3>Upload CSV file</h3></label>
+      <input
+        type="file"
+        name="image"
+        (change)="selectImage($event)"
+        class="form-control"
+        type="file"
+        id="formFile"
+      />
+    </div>
+    <!-- <input  type="file" name="image" (change)="selectImage($event)"> -->
+
+    <br />
+    <div>
+      <!-- <button [disabled]="clicked"  type="submit" (click)="onSubmit(); clicked=true;">Upload</button> -->
+      <button
+        class="mb-3"
+        [disabled]="clicked"
+        type="submit"
+        (click)="onSubmit(); clicked = true"
+        mat-raised-button
+        color="primary"
+      >
+        Upload
+      </button>
+    </div>
+  </form>
+
+  <!-- landing content  -->
+  <div class="landing">
+    <div class="card">
+      <mat-card
+        ><h2>Landing Page Editor</h2>
+        <mat-form-field class="example-full-width form" appearance="fill">
+          <mat-label>Favorite food</mat-label>
+          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="form" appearance="fill">
+          <mat-label>Favorite food</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="form" appearance="fill">
+          <mat-label>Favorite car</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+
+        <br />
+
+        <button mat-raised-button color="primary">Preview Landing Page</button>
+        &nbsp;
+        <button mat-raised-button color="accent">Save</button>
+      </mat-card>
+    </div>
+
+    <mat-tab-group>
+      <mat-tab label="First"
+        ><mat-form-field appearance="fill">
+          <mat-label>Select an option</mat-label>
+          <mat-select disableRipple>
+            <mat-option value="1">Option 1</mat-option>
+            <mat-option value="2">Option 2</mat-option>
+            <mat-option value="3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="table"></div
+      ></mat-tab>
+      <mat-tab label="Second"> Content 2 </mat-tab>
+      <mat-tab label="Third"> Content 3 </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

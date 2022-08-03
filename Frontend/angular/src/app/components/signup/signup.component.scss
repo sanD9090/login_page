@@ -1,0 +1,67 @@
+form{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.mb-3{
+    margin-right: 30%;
+}
+.content{
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-bottom: 18px;
+    border-style: groove;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: rgba(120, 120, 120, 0.093);
+    display: flex;
+}
+.tab{
+    margin-left:170px ;
+}
+#password{
+    margin-right: 10px;
+}
+#namefield{
+    margin-right: 5px;
+    width: 40%;
+}
+#dobspan{
+    display: inline-block;
+}
+
+.ico {
+    font-size: 200px;
+    color: grey;
+    margin-left: 90px;
+    
+  }
+
+  .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px;
+  }
+
+  .login{
+    margin-left: 150px;
+  }
+
+  .submit{
+    margin-left: 140px;
+  }
+  .pass{
+    width: 87%;
+  }
+
+  .msg{
+    margin-left: 40px;
+  }
+
+  .ema{
+    width: 87%;
+
+  }
+  .lnam{
+    width: 44%;
+  }

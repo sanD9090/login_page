@@ -1,0 +1,84 @@
+<div class="content">
+
+ 
+
+
+    <form [formGroup]="myform" (ngSubmit)="submit()" class="form-container" >
+      
+      <mat-icon class="ico">account_circle</mat-icon>
+        <h1 class="login">Log In</h1> 
+    
+        <span class="email">Email-ID</span> <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label> 
+          <input matInput formControlName="email" [errorStateMatcher]="matcher" [(ngModel)]="email" />
+          <mat-error
+            *ngIf="
+              myform.controls['email'].dirty ||
+              myform.controls['email'].touched
+            "
+          >
+            <mat-error *ngIf="myform.controls['email'].errors?.['required']"
+              >Email is required</mat-error
+            >
+            <mat-error *ngIf="myform.controls['email'].errors?.['email']"
+              >Please enter valid email</mat-error
+            >
+          </mat-error>
+        </mat-form-field> 
+        
+        
+    
+        <br />
+    
+          <span class="password">Password:</span> <br />
+        <mat-form-field       class="pass"
+        id="password" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="showPassword ? 'text' : 'password'"
+            name="password"
+            formControlName="password"
+            [errorStateMatcher]="matcher"
+            [(ngModel)]="password"
+          />
+          <mat-icon matSuffix (click)="togglePasswordVisibility()">
+            {{ showPassword ? "visibility_off" : "visibility" }}
+          </mat-icon>
+          <mat-error
+            *ngIf="
+              myform.controls['password'].dirty ||
+              myform.controls['password'].touched
+            "
+          >
+            <mat-error *ngIf="myform.controls['password'].errors?.['required']"
+              >password is required</mat-error
+            >
+            <mat-error *ngIf="myform.controls['password'].errors?.['minlength']"
+              >Minimum 5 chars</mat-error
+            ></mat-error
+          >
+        </mat-form-field>
+    
+       
+       <br>
+        <button mat-raised-button color="accent" class="submit" [disabled]="myform.invalid" type="submit">
+        Log In
+        </button> <br>
+    
+        
+       
+    
+       <span class="msg"> {{invalid}} </span>
+    
+     
+        
+    </form>
+    
+    </div>
+    
+    
+    <!-- <router-outlet></router-outlet> -->
+    
+    

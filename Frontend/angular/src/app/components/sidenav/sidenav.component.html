@@ -1,0 +1,9 @@
+<div class="sidenav">
+  <button mat-flat-button class="but" [routerLink]="['landing']"  ><mat-icon>feed</mat-icon> Landing Page</button>
+    <button mat-flat-button class="but" [routerLink]="['users']" ><mat-icon>people</mat-icon> Users</button>
+    <button mat-flat-button id="bottom" class="but" routerLink="" ><mat-icon>people</mat-icon> Log Out</button>
+  </div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
